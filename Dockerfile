@@ -6,5 +6,5 @@ RUN apt-get install -y maven
 COPY . .
 
 RUN mvn package
-
+EXPOSE 80
 CMD ["java", "-jar", "target/docker-springboot.jar"]
