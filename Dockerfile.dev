@@ -5,6 +5,4 @@ RUN apt-get install -y maven
 
 COPY . .
 
-RUN mvn package
-
-CMD ["java", "-jar", "target/docker-springboot.jar"]
+CMD ["mvn", "test"]
