@@ -1,10 +1,10 @@
 FROM openjdk:8
 WORKDIR '/app'
+RUN apt-get update
+RUN apt-get install -y maven
 
 COPY . .
 
-RUN mvn clean install
+RUN mvn package
 
-COPY target/docker-springboot.jar docker-springboot.jar
-
-ENTRYPOINT ["java", "-jar", "docker-springboot.jar"]
+ENTRYPOINT ["java", "-jar", "target/docker-springboot.jar"]
