@@ -9,14 +9,14 @@ before_install:
 script:
   - docker run -e CI=true bartekwas/dockerspring
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "us-east-2"
-#   app: "dockerspring"
-#   env: "Dockerreact-env"
-#   bucket_name: "elasticbeanstalk-docker-react"
-#   bucket_path: "docker-react"
-#   on:
-#     branch: master
-#   access_key_id: $aws_ACCESS_KEY
-#   secret_access_key: $_SECRET_KEY  
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "dockerspring"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-docker-react"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $aws_ACCESS_KEY
+  secret_access_key: $aws_SECRET_KEY  
